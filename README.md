@@ -1,6 +1,7 @@
 # Cattle.FW
 #es6
 common FW
+
 /**
  * Created by cattle on 2016/8/24.
  *
@@ -9,6 +10,7 @@ common FW
  */
 
 class _D {
+
     /**
      * 获取当前的时间戳
      * @returns {number}  返回当前的时间戳
