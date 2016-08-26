@@ -14,7 +14,6 @@ jquery.extend.CDate.js
  * 获取当前的时间戳
  * @returns {number}  返回当前的时间戳
  */
-
 getNowTimeStamp()
 
 
@@ -24,7 +23,6 @@ getNowTimeStamp()
  *                 默认是':'
  * @returns {*}  返回当前的时间，不包含日期
  */
-
 getNowTime(signStr)
 
 
@@ -34,6 +32,7 @@ getNowTime(signStr)
  *                默认为"-"
  * @returns {*} 返回当前的日期
  */
+
 getNowDate(signStr)
 
 
@@ -44,6 +43,7 @@ getNowDate(signStr)
  * @param s 秒数  一般为60s
  * @returns {number}  返回0表示传入的参数有误，参数必须是数字
  */
+
 timeToSecond(h, m, s)
 
 
@@ -56,6 +56,7 @@ timeToSecond(h, m, s)
  * @returns {*|null}
  * @constructor
  */
+
 TimeStampToDateTime(timeStamp, timeFlag, signStr)
 
 
@@ -64,6 +65,7 @@ TimeStampToDateTime(timeStamp, timeFlag, signStr)
  * @param dateStr  要转换的日期  默认为当前日期和时间
  * @returns {number} 返回0表示参数类型错误
  */
+
 dateTimeToTimeStamp(dateStr)
 
 
@@ -75,6 +77,7 @@ dateTimeToTimeStamp(dateStr)
  * @returns {number|null}  返回相差的天数，天数为向下取整的，
  *                         返回null 则表示两个日期都为当前日期
  */
+
 getDateDifferDayCount(dateStr1, dateStr2)
 
 
@@ -82,6 +85,7 @@ getDateDifferDayCount(dateStr1, dateStr2)
  * 获取当前天数是星期几
  * @returns {string|null}
  */
+
 getWeekSeveral()
 
 
@@ -89,6 +93,7 @@ getWeekSeveral()
  * 倒计时
  * @param time  秒数  默认值为60秒
  */
+
 downCount(time)
 
 
@@ -101,6 +106,7 @@ downCount(time)
  * @param hanization 是否要转为中文  boolean值
  * @returns {string|null}
  */
+
 formatDate(dateTime, isHanization, repSign, repSignEnd, hanization)
 
 
@@ -109,15 +115,21 @@ formatDate(dateTime, isHanization, repSign, repSignEnd, hanization)
  * @param n
  * @returns {*}
  */
+
 countNumberLt(n)
 
 -----------------------------------------------------------------
 es5.jquery.CDate.js
+
 es6.jquery.CDate.js
+
 调用方法：
 var d = new _D();
+
 d.xxxx();
 
 jqeury.extend.CDate.js
+
 调用方法
+
 $._D.xxxx();
