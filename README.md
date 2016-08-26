@@ -23,6 +23,7 @@ getNowTimeStamp()
  *                 默认是':'
  * @returns {*}  返回当前的时间，不包含日期
  */
+
 getNowTime(signStr)
 
 
