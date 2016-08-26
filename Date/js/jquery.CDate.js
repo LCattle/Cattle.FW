@@ -158,4 +158,46 @@ class _D {
         }, 1000);
 
     }
+
+    /**
+     * 格式化字符串
+     * @param dateTime 要转化的字符串
+     * @param isHanization 传进来的字符串是否为中文  boolean值
+     * @param repSign 日期要替换的字符
+     * @param repSignEnd 日期替换之后的字符
+     * @param hanization 是否要转为中文  boolean值
+     * @returns {string|null}
+     */
+    formatDate(dateTime, isHanization, repSign, repSignEnd, hanization){
+        let repEnd = '';
+        let sign = '/';
+        if(repSignEnd){
+            sign = repSignEnd;
+        }
+        if(!dateTime || dateTime === ''){
+            alert('请输入要格式化的时间～～');
+            return;
+        }
+        //中文转为字符
+        if(isHanization){
+            repEnd = dateTime.replace('年', sign)
+                        .replace('月', sign)
+                        .replace('日', '');
+        }
+        //字符转为中文
+        if(hanization){
+            let [Y, M, D] = ['年', '月', '日'];
+            repEnd =  dateTime.replace(repSign, Y)
+                        .replace(repSign, M)
+                        .replace(' ', D + ' ');
+        }else{
+            //字符转字符
+            repEnd = dateTime.replace( repSign, sign)
+                        .replace(repSign, sign);
+        }
+        return repEnd || null;
+    }
+
+
+
 }
