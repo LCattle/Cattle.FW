@@ -14,7 +14,7 @@ jquery.extend.CDate.js
  * 获取当前的时间戳
  * @returns {number}  返回当前的时间戳
  */
-    getNowTimeStamp()
+  getNowTimeStamp()
 
 
 /**
