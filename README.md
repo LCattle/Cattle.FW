@@ -1,6 +1,5 @@
-# Cattle.FW
-CDate.js  文档
-
+#FW
+#CDate.js  文档
 
 es6.jquery.CDate.js
 仅支持chrome
@@ -14,6 +13,7 @@ jquery.extend.CDate.js
  * 获取当前的时间戳
  * @returns {number}  返回当前的时间戳
  */
+
 getNowTimeStamp()
 
 
@@ -120,16 +120,11 @@ countNumberLt(n)
 
 -----------------------------------------------------------------
 es5.jquery.CDate.js
-
 es6.jquery.CDate.js
-
 调用方法：
 var d = new _D();
-
 d.xxxx();
 
 jqeury.extend.CDate.js
-
 调用方法
-
 $._D.xxxx();
