@@ -1,7 +1,7 @@
 /**
  * Created by cattle on 2016/8/24.
  * 此框架依赖于jQuery-1.8以上
- * 兼容IE7以上
+ * 此文件支持chrome
  */
 
 class _D {
