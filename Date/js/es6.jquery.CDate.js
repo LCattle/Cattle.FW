@@ -1,7 +1,7 @@
 /**
  * Created by cattle on 2016/8/24.
  * 此框架依赖于jQuery-1.8以上
- *
+ * 兼容IE7以上
  */
 
 class _D {
@@ -26,6 +26,9 @@ class _D {
         }
         let date = new Date();
         let [h, m, s] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+        h = this.countNumberLt(h);
+        m = this.countNumberLt(m);
+        s = this.countNumberLt(s);
         return h + sign + m + sign + s || 0;
     }
 
@@ -42,6 +45,8 @@ class _D {
         }
         var date = new Date();
         var [y, m, d] = [date.getFullYear(), (date.getMonth() + 1), date.getDate()];
+        m = this.countNumberLt(m);
+        d = this.countNumberLt(d);
         return y + sign + m + sign + d || null;
     }
 
@@ -77,9 +82,14 @@ class _D {
         }
         let date = new Date(timeStamp);
         let [dateTimeStr, Y, M, D] = [, date.getFullYear(), (date.getMonth() + 1), date.getDate()];
+        Y = this.countNumberLt(Y);
+        D = this.countNumberLt(D);
         dateTimeStr = Y + sign + M + sign + D;
         if (timeFlag) {
             let [h, m, s] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+            h = this.countNumberLt(h);
+            m = this.countNumberLt(m);
+            s = this.countNumberLt(s);
             dateTimeStr = dateTimeStr + ' ' + h + ':' + m + ':' + s;
         }
         return dateTimeStr || null;
@@ -91,11 +101,14 @@ class _D {
      * @returns {number} 返回0表示参数类型错误
      */
     dateTimeToTimeStamp(dateStr){
-        let dateTime = this.getNowDate() +' ' + this.getNowTime();
+        let dateTime ='';
         if(dateStr){
+            dateStr = this.formatDate(dateStr, false, '-', '/', false);
             dateTime = dateStr;
+        }else{
+            dateTime = this.getNowDate() +' ' + this.getNowTime();
         }
-        return new Date(dateTime).getTime() || 0;
+        return Number(new Date(dateTime).getTime()) || 0;
     }
 
     /**
@@ -198,6 +211,12 @@ class _D {
         return repEnd || null;
     }
 
-
-
+    /**
+     * 判断数字是否小于10，如果小于10则在前面加0
+     * @param n
+     * @returns {*}
+     */
+    countNumberLt(n){
+        return n <= 9 ? ('0' + n) : n;
+    }
 }
